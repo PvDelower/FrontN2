@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+header {
+  background-color: rgba(26, 24, 24, 1);
+  padding: 41px 0 0 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+h1 {
+  position: absolute;
+  width: 975px;
+  height: 19px;
+  left: 319px;
+  top: 51px;
+
+  font-family: Arvo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 44px;
+
+  color: #878787;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+.body{
+  background-color: rgba(26, 24, 24, 1);
+  padding: 41px 0 0 0;
+}
+.auto{
+  position: absolute;
+  width: 961px;
+  height: 900px;
+  left: 319px;
+  top: 104px;
+
+  background: #3E3C3C;
+  border-radius: 17px;
+}
+.AVGprice{
+  position: absolute;
+  width: 265px;
+  height: 46px;
+  right: 10px;
+  top: 404px;
+
+  background: #F9DCC8;
+  border-radius: 18px;
+}
+.AVGkm{
+  position: absolute;
+  width: 265px;
+  height: 46px;
+  right: 10px;
+  top: 489px;
+
+  background: #F9DCC8;
+  border-radius: 18px;
+}
+.AVGyear{
+  position: absolute;
+  width: 265px;
+  height: 46px;
+
+  right: 10px;
+  top: 565px;
+
+  background: #F9DCC8;
+  border-radius: 18px;
+}
+.Nedostatki{
+  position: absolute;
+  width: 318px;
+  height: 500px;
+  left: 10px;
+  top: 278px;
+
+  background: #C4C4C4;
+  border-radius: 19px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.carIcon{
+  position: absolute;
+  width: 48px;
+  height: 50px;
+  left: 100px;
+  top: 278px;
 }
