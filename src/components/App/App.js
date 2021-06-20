@@ -9,16 +9,23 @@ import Status from "../Status/Status";
 import cars from "../../constants/cars";
 
 function App() {
-  const [car, setCar] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [car, setCar] = useState({
+    car_model: false,
+    mileage_avg: false,
+    price_avg: false,
+    production_year: false,
+  })
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
 
-  useEffect(() => {
-    const apiURL = 'http://localhost:5002';
+  const onChangeCar = (_, values) => {
+    const apiURL = `${process.env.REACT_APP_BE_URL}/parser.getcar?car_model=${values.id}&production_year=2014`;
 
     axios.get(apiURL)
         .then((response) => {
-          setCar(response.data)
+          if (response.data.response.items.length) {
+            setCar(response.data.response.items[0])
+          }
           setLoading(false)
         })
         .catch((err) => {
@@ -26,7 +33,7 @@ function App() {
           setLoading(false)
           setError(err)
         })
-  }, [])
+  }
 
 
   return (
@@ -38,14 +45,15 @@ function App() {
             id="car"
             options={cars}
             getOptionLabel={(option) => option.name}
+            onChange={onChangeCar}
             style={{width: 300}}
             renderInput={(params) => <TextField {...params} label="Марка авто" variant="outlined"/>}
         />
       </div>
 
 
-      {loading ? <Status message="Идет загрузка..."/> 
-               : !error ? <CarInfo car={car}/> : <Status message="Произошла ошибка при загрузке данных!"/> }
+      {loading ? <Status message="Идет загрузка..."/>
+               : !error && car ? <CarInfo car={car}/> : <Status message="Произошла ошибка при загрузке данных!"/> }
     </div>
   );
 }
