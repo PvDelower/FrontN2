@@ -47,6 +47,10 @@ h1 {
   background: #F9DCC8;
   border-radius: 18px;
 }
+.AVGprice > div, .AVGkm > div, .AVGyear > div {
+  margin-top: -20px;
+  color: #ffffff;
+}
 .AVGkm{
   position: absolute;
   width: 265px;
